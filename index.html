@@ -15,27 +15,26 @@
       background-image: url('carro.png');
       background-size: cover;
       background-position: center;
-      padding: 80px 20px;
+      padding: 60px 15px;
       text-align: center;
-      color: #bdae71; 
+      color: #bdae71;
     }
 
     .hero h2 {
-      font-size: 87px;
-      font-family: "Comic Sans", serif;
+      font-size: 8vw;
+      font-family: "Comic Sans MS", cursive;
       margin-bottom: 10px;
     }
 
     .hero p {
-      font-size: 18px;
-      font-family: "Comic Sans", serif;
+      font-size: 4vw;
       color: #decc98;
     }
 
     .frase {
       background-color: #15630d;
-      color: #444; 
-      padding: 15px 20px;
+      color: #444;
+      padding: 12px 16px;
       border-radius: 8px;
       display: inline-block;
       font-weight: bold;
@@ -46,6 +45,7 @@
       color: #fff;
       padding: 20px;
       text-align: center;
+      font-size: 14px;
     }
 
     .contenedor-casillas {
@@ -53,31 +53,29 @@
       flex-direction: column;
       align-items: center;
       padding: 20px;
+      gap: 15px;
     }
 
     .casilla {
       width: 90%;
-      max-width: 800px;
-      height: 120px;
+      height: 100px;
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
       border: 2px solid #decc98;
       border-radius: 10px;
-      margin: 20px auto;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      font-size: 50px;
-      font-family: "Comic Sans", serif;
+      font-size: 6vw;
+      font-family: "Comic Sans MS", cursive;
       font-weight: bold;
       color: #decc98;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-      transition: all 0.3s ease;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
       cursor: pointer;
       text-decoration: none;
-      padding: 20px;
+      padding: 15px;
     }
 
     .casilla:hover {
@@ -85,99 +83,129 @@
     }
 
     .seccion {
-      margin: 80px 20px;
-      padding: 20px;
+      margin: 60px 15px;
+      padding: 15px;
       border-radius: 10px;
       text-align: center;
     }
 
     .seccion h2 {
-      font-size: 50px;
-      font-family: "Comic Sans", serif;
+      font-size: 8vw;
+      font-family: "Comic Sans MS", cursive;
       margin-bottom: 10px;
     }
 
-#hojas-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: -1;
-}
+    #hojas-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: -1;
+    }
 
-.hoja {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  background-image: url('hoja.png'); /* Asegúrate de tener una imagen de hoja */
-  background-size: contain;
-  background-repeat: no-repeat;
-  animation: caer linear infinite;
-  opacity: 0.8;
-}
+    .hoja {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-image: url('hoja.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      animation: caer linear infinite;
+      opacity: 0.8;
+    }
 
-@keyframes caer {
-  0% {
-    transform: translateY(-100px) rotate(0deg);
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(110vh) rotate(360deg);
-    opacity: 0;
-  }
-}
+    @keyframes caer {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
 
-.subrecuerdo {
-  margin-top: 40px;
-  text-align: left;
-  background-color: #f3e8c0;
-  padding: 20px;
-  border-radius: 10px;
-}
+    .subrecuerdo {
+      margin-top: 40px;
+      text-align: left;
+      background-color: #f3e8c0;
+      padding: 20px;
+      border-radius: 10px;
+      font-size: 4vw;
+    }
 
-.subrecuerdo h3 {
-  color: #2f4f21;
-  font-size: 24px;
-  margin-bottom: 10px;
-}
+    .subrecuerdo h3 {
+      color: #2f4f21;
+      font-size: 5vw;
+      margin-bottom: 10px;
+    }
 
-.subrecuerdo p {
-  font-size: 15px;
-  color: #333;
-}
+    .subrecuerdo p {
+      font-size: 4vw;
+      color: #333;
+    }
 
-.imagen-recuerdo {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  border-radius: 10px;
-  margin-top: 10px;
-}
+    .imagen-recuerdo {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
 
-.galeria-imagenes img {
-  height: 400px;
-  border-radius: 10px;
-  object-fit: cover;
-  transition: all 0.3s ease;
-  filter: brightness(1);
-}
+    .galeria-imagenes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
 
-.galeria-imagenes:hover img {
-  filter: brightness(0.3);
-}
+    .galeria-imagenes img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
+      transition: all 0.3s ease;
+    }
 
-.galeria-imagenes img:hover {
-  filter: brightness(1.1);
-  transform: scale(1.05);
-  z-index: 1;
-  
-}
+    .galeria-imagenes:hover img {
+      filter: brightness(0.6);
+    }
+
+    .galeria-imagenes img:hover {
+      filter: brightness(1.1);
+      transform: scale(1.05);
+      z-index: 1;
+    }
+
+    /* Media Query para pantallas más grandes (opcional) */
+    @media(min-width: 768px) {
+      .hero h2 {
+        font-size: 60px;
+      }
+
+      .hero p,
+      .subrecuerdo p {
+        font-size: 18px;
+      }
+
+      .subrecuerdo h3 {
+        font-size: 24px;
+      }
+
+      .casilla {
+        height: 120px;
+        font-size: 40px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -200,94 +228,54 @@
     </a>
   </div>
 
-<div id="apartado1" class="seccion">
-  <h2>GlowUp</h2>
+  <!-- Apartado 1: GlowUp -->
+  <div id="apartado1" class="seccion">
+    <h2>GlowUp</h2>
 
-  <div class="bloque-recuerdo">
-      <div class="galeria-imagenes">
-    <img src="antes.jpg" alt="Imagen 1">
-    <img src="now.jpg" alt="Imagen 2">
-  </div>
+    <div class="galeria-imagenes">
+      <img src="antes.jpg" alt="Antes">
+      <img src="now.jpg" alt="Ahora">
+    </div>
+
     <div class="subrecuerdo">
       <h3>Skin Care</h3>
       <p>El cuidado de la cara es muy importante ya que es la primera perspectiva que van a tener los demás acerca de ti.</p>
-      <hr>
-      <p><b>Cejas:</b> Tenerlas rectas y cuidadas va a favorecer mucho el rostro, dando una mejor perspectiva de la cara.</p>
-      <p><b>Lavado:</b> Lava tu cara con agua fría (mejora la circulación de la sangre haciendo que tu piel se vea más cuidada), y usa un jabón único para la cara utilizando un cepillo, así evitando el contacto con las manos.
-      <p><b>Masajea:</b> Según estudios masajear tu cara por tres minutos tonifica los músculos de la cara, liberas tensión y le da más vitalidad.
-      <p><b>Afeitado:</b> Afeitarse te hace ver más atractivo, dependiendo de las proporciones de tu cara o la cantidad de pelo que te salga puedes dejarte barba, perilla o bigote, en mi caso me afeito entero, pero el objetivo es que te veas limpio.
-      <p><b>Pelo:</b> Este es un caso diferente para todo el mundo, pero debes ver que tipo de peinado te queda mejor según tu rostro, favorece muchísimo a tu imagen.
+      <p><b>Cejas:</b> Tenerlas rectas y cuidadas favorece mucho el rostro.</p>
+      <p><b>Lavado:</b> Lava tu cara con agua fría y usa un jabón facial con cepillo, no con manos.</p>
+      <p><b>Masajea:</b> Masajear 3 minutos tonifica músculos y da vitalidad.</p>
+      <p><b>Afeitado:</b> Dependiendo del rostro, elige si afeitarte o dejarte barba limpia.</p>
+      <p><b>Pelo:</b> Encuentra un peinado que te favorezca según tu rostro.</p>
     </div>
 
-  <div class="bloque-recuerdo">
-      <div class="galeria-imagenes">
-    <img src="imagen1.jpg" alt="Imagen 1">
-    <img src="imagen2.jpg" alt="Imagen 2">
-    <img src="imagen3.jpg" alt="Imagen 3">
-  </div>
-  </div>
+    <div class="galeria-imagenes">
+      <img src="imagen1.jpg">
+      <img src="imagen2.jpg">
+      <img src="imagen3.jpg">
+    </div>
 
     <div class="subrecuerdo">
       <h3>Vestimenta</h3>
-      <p>Debes encontrar un estilo propio que te guste y combinar la ropa, no ponerte ropa porque es la que tienes a mano.</p>
-      <hr>
-      <p>Considero que no hace falta mucho dinero para vestir bien, y puedes seguir este modelo que uso:
-      <p><b>Parte de arriba:</b> Sudaderas o camisetas básicas con algun logo pero no exageradas en dibujos, sin dar importancia si son de marca o simples.
-      <p><b>Parte de abajo:</b> Los pantalones pueden ir o acorde con la sudadera o las zapatillas, o un contraste si la sudera o camiseta y las zapatillas son del mismo color. <b>PD,</b> Ten cuidado con los tonos, aunque sea del mismo color mayormente duele a la vista ver tonos oscuros con muy claros.
-      <p><b>Calzado, calcetines:</b> Siempre uso los calcetines del mismo color que  el calzado y bajos, y el calzado lo puedes conjuntar con la parte de arriba o la de abajo, pero intenta no llevar todo del mismo color se puede ver raro.
-      <p><b>Detalles:</b> Minimo ponte un detalle en las manos ya sea un reloj, pulsera o anillo, pero no exageres puede verse feo, y las cadenas dan un toque elegante, en mi caso es fina y corta, ya gustos de cada uno con su estilo.
+      <p>No es necesario gastar mucho, encuentra un estilo propio:</p>
+      <p><b>Parte arriba:</b> Ropa básica, con pocos logos.</p>
+      <p><b>Parte abajo:</b> Combina con arriba o con calzado, evita choques de tonos.</p>
+      <p><b>Calcetines:</b> Que combinen con el calzado, mejor bajos.</p>
+      <p><b>Detalles:</b> Agrega un accesorio pequeño (reloj, pulsera, cadena discreta).</p>
     </div>
-  <div class="bloque-recuerdo">
-      <div class="galeria-imagenes">
-    <img src="imagen1.jpg" alt="Imagen 1">
-    <img src="imagen2.jpg" alt="Imagen 2">
-    <img src="imagen3.jpg" alt="Imagen 3">
-  </div>
-  </div>
-
 
     <div class="subrecuerdo">
       <h3>Actividad física</h3>
-      <p>Hacer ejercicio va a mejorar tu condición física notando cambios de confianza, seguridad y autoestima.</p>
-      <hr>
-      <p><b>Deporte:</b> Practicar un deporte te obliga a socializar con otras personas, apasionarte por algo y encontrar un nuevo hobby, pudiendo aprovechar el tiempo de forma eficiente y productiva.
-      <p><b>Entreno:</b> El entreno en el gimnasio o individual es un proceso más complicado pues requiere actitud, motivación, esfuerzo y compromiso en uno mismo, pero si logras ser constante tu mentalidad será mas fuerte al igual que tus músculos.
+      <p>Mejora tu confianza, energía y mentalidad.</p>
+      <p><b>Deporte:</b> Socializas, te diviertes y te mantienes en forma.</p>
+      <p><b>Entreno:</b> Gimnasio o casa, requiere constancia y disciplina.</p>
     </div>
   </div>
-  <div class="bloque-recuerdo">
-      <div class="galeria-imagenes">
-    <img src="imagen1.jpg" alt="Imagen 1">
-    <img src="imagen2.jpg" alt="Imagen 2">
-    <img src="imagen3.jpg" alt="Imagen 3">
-  </div>
-</div>
 
+  <!-- Apartado 2: Gastronomía -->
   <div id="apartado2" class="seccion">
     <h2>Gastronomía</h2>
     <p>Recomendaciones prácticas sobre viajes, escritura y más.</p>
   </div>
 
+  <!-- Apartado 3: Aventuras -->
   <div id="apartado3" class="seccion">
-    <h2>Aventuras</h2>
-    <p>Descubre los sitios más increíbles que he visitado.</p>
-  </div>
-
-  <footer>
-    © 2025 RecioBlog. Todos los derechos reservados.
-  </footer>
-
-<script>
-  const container = document.getElementById('hojas-container');
-
-  for (let i = 0; i < 100; i++) {
-    const hoja = document.createElement('div');
-    hoja.classList.add('hoja');
-    hoja.style.left = Math.random() * 100 + 'vw';
-    hoja.style.animationDuration = 5 + Math.random() * 5 + 's';
-    hoja.style.animationDelay = Math.random() * 5 + 's';
-    hoja.style.top = -50 + 'px';
-    container.appendChild(hoja);
-  }
-</script>
-</body>
-</html>
+    <h2>Avent
