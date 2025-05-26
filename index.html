@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dropshipping + GlowUp</title>
+  <title>Dropshipping</title>
   <style>
     body {
       margin: 0;
@@ -77,7 +77,7 @@
 
     .landing-hero p {
       font-size: 18px;
-      color: #444;
+      color: #fff;
       margin-bottom: 30px;
     }
 
@@ -239,6 +239,41 @@
         font-size: 40px;
       }
     }
+        .expand {
+            width: 300px;
+            height: 100px;
+            overflow: hidden;
+            transition: height 0.5s ease;
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+
+        .expand.expandido {
+            height: 300px;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+@media (max-width: 768px) {
+    .right {
+        flex-direction: column; /* Organiza los elementos en una columna */
+        width: 100%;
+    }
+
+    .text, .image {
+        width: 100%;
+        text-align: center;
+    }
+
+    .expand {
+        width: 100%; /* Ajustar el ancho para dispositivos móviles */
+    }
+
+    button {
+        width: 100%; /* Que los botones ocupen todo el ancho en móvil */
+    }
+}
   </style>
 </head>
 <body>
@@ -277,7 +312,11 @@
         <div class="text">
             <h2>Producto</h2>
             <p>Infórmate sobre nuestra misión, nuestros métodos y los resultados de décadas de defensa de derechos.</p>
-            <button onclick="window.location.href='organizacion.html'">Ver más</button>
+<div class="expand" id="expand1">
+    <p>Este es el contenido inicial de Producto.</p>
+    <p style="display: none;" id="extra1">Aquí está el contenido adicional de Producto.</p>
+</div>
+   <button onclick="expandir('expand1', 'extra1')">Ver más</button>
         </div>
     </div>
     <div class="right">
@@ -286,8 +325,11 @@
         </div>
         <div class="text">
             <h2>Tienda online</h2>
-            <p>¿Estás listo para dar el siguiente paso? Puedes convertirte en un colaborador de nuestra causa o participar personalmente.</p>
-            <button onclick="window.location.href='accion.html'">Ver más</button>
+<div class="expand" id="expand2">
+    <p>Este es el contenido inicial de Tienda online.</p>
+    <p style="display: none;" id="extra2">Aquí está el contenido adicional de Tienda online.</p>
+</div>
+   <button onclick="expandir('expand2', 'extra2')">Ver más</button>
         </div>
     </div>
     <div class="right">
@@ -296,8 +338,11 @@
         </div>
         <div class="text">
             <h2>Marketing orgánico</h2>
-            <p>¿Estás listo para dar el siguiente paso? Puedes convertirte en un colaborador de nuestra causa o participar personalmente.</p>
-            <button onclick="window.location.href='accion.html'">Ver más</button>
+<div class="expand" id="expand3">
+    <p>Este es el contenido inicial de Marketing orgánico.</p>
+    <p style="display: none;" id="extra3">Aquí está el contenido adicional de Marketing orgánico.</p>
+</div>
+   <button onclick="expandir('expand3', 'extra3')">Ver más</button>
         </div>
     </div>
 
@@ -315,6 +360,19 @@
     p.style.animationDuration = (10 + Math.random() * 10) + 's';
     paracaidasContainer.appendChild(p);
   }
+
+ function expandir(expandId, extraId) {
+    let expand = document.getElementById(expandId);
+    let extra = document.getElementById(extraId);
+
+    if (expand.classList.contains("expandido")) {
+        expand.classList.remove("expandido");
+        extra.style.display = "none";
+    } else {
+        expand.classList.add("expandido");
+        extra.style.display = "block";
+    }
+}
 </script>
 </body>
 </html>
