@@ -8,14 +8,11 @@
 body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Evita el desbordamiento lateral */
+    overflow-x: hidden; /* Evita desplazamiento lateral */
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fff;
+    color: #111;
 }
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fff;
-      color: #111;
-    }
 
     /* NAVBAR */
 .navbar {
@@ -23,21 +20,20 @@ body {
     top: 0;
     z-index: 1000;
     display: flex;
-    overflow: hidden; /* Evita elementos que sobresalgan */
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 15px 10px; /* Reduce padding para evitar desbordamientos */
     background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    width: 100vw; /* Garantiza que ocupe todo el ancho */
-    max-width: 100%; /* Previene desbordamientos */
+    width: 100vw; /* Ocupa todo el ancho */
+    max-width: 100%;
 }
 
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-    }
+.nav-links {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los enlaces se ajusten en móvil */
+    gap: 10px;
+}
 
     .nav-links a {
       text-decoration: none;
@@ -271,10 +267,13 @@ footer {
         width: 100%; /* Que los botones ocupen todo el ancho en móvil */
     }
 }
+
 @media (max-width: 768px) {
-.landing-hero {
-    width: 100vw; /* Asegura que la sección ocupe todo el ancho */
-    overflow: hidden; /* Evita que elementos desborden */
+    .landing-hero {
+        width: 100vw; /* Asegura que ocupe todo el ancho */
+        padding: 60px 10px; /* Reduce espacio para mejor ajuste */
+        background-size: cover; /* Ajusta la imagen */
+        background-position: center;
 }
 
     .landing-hero h1 {
