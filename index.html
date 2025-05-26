@@ -3,21 +3,158 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>dropshipping</title>
+  <title>Dropshipping + GlowUp</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #a0c681;
+      background-color: #fff;
+      color: #111;
     }
 
+    /* NAVBAR */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .navbar .logo {
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .nav-buttons button {
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .btn-login {
+      background-color: white;
+      border: 1px solid #ccc;
+    }
+
+    .btn-signin {
+      background-color: #111;
+      color: white;
+    }
+
+    /* HERO LANDING */
+    .landing-hero {
+      text-align: center;
+      padding: 100px 20px 60px;
+      background-color: #eaf6da;
+      background-image: url('graficas.png');
+    }
+
+    .landing-hero h1 {
+      font-size: 42px;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .landing-hero p {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .hero-buttons button {
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background-color: #111;
+      color: white;
+    }
+
+    .btn-secondary {
+      background-color: white;
+      border: 1px solid #aaa;
+    }
+
+#paracaidas-container {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.paracaidas {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-image: url('paracaidas.png'); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 100;
+  animation: caer-flotando 3s linear infinite;
+}
+
+@keyframes caer-flotando {
+  0% {
+    transform: translateY(-100px) translateX(0px) rotate(0deg);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translateY(25vh) translateX(20px) rotate(8deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(50vh) translateX(-20px) rotate(-8deg);
+  }
+  75% {
+    transform: translateY(75vh) translateX(15px) rotate(6deg);
+  }
+  100% {
+    transform: translateY(110vh) translateX(0px) rotate(0deg);
+    opacity: 0.3;
+  }
+}
+
+
+    /* SECCIONES PERSONALIZADAS */
     .hero {
-      background-image: url('carro.png');
       background-size: cover;
       background-position: center;
       padding: 60px 15px;
       text-align: center;
-      color: #bdae71;
     }
 
     .hero h2 {
@@ -26,19 +163,54 @@
       margin-bottom: 10px;
     }
 
-    .hero p {
-      font-size: 4vw;
-      color: #decc98;
-    }
-
     .frase {
       background-color: #15630d;
-      color: #444;
+      color: #eee;
       padding: 12px 16px;
       border-radius: 8px;
       display: inline-block;
       font-weight: bold;
     }
+
+        .right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .text {
+            width: 50%;
+            padding: 20px;
+        }
+        .text h2 {
+            margin-top: 0;
+        }
+        .text button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .text button:hover {
+            background-color: #45a049;
+        }
+        .image {
+            width: 40%;
+            text-align: center;
+        }
+        .image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
 
     footer {
       background-color: #222;
@@ -48,151 +220,12 @@
       font-size: 14px;
     }
 
-    .contenedor-casillas {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-      gap: 15px;
-    }
-
-    .casilla {
-      width: 90%;
-      height: 100px;
-      background-size: cover;
-      background-position: center;
-      border: 2px solid #decc98;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 6vw;
-      font-family: "Comic Sans MS", cursive;
-      font-weight: bold;
-      color: #decc98;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-      transition: transform 0.3s ease;
-      cursor: pointer;
-      text-decoration: none;
-      padding: 15px;
-    }
-
-    .casilla:hover {
-      transform: scale(1.03);
-    }
-
-    .seccion {
-      margin: 60px 15px;
-      padding: 15px;
-      border-radius: 10px;
-      text-align: center;
-    }
-
-    .seccion h2 {
-      font-size: 8vw;
-      font-family: "Comic Sans MS", cursive;
-      margin-bottom: 10px;
-    }
-
-    #hojas-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: -1;
-    }
-
-    .hoja {
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      background-image: url('hoja.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      animation: caer linear infinite;
-      opacity: 0.8;
-    }
-
-    @keyframes caer {
-      0% {
-        transform: translateY(-100px) rotate(0deg);
-        opacity: 0;
-      }
-      50% {
-        opacity: 0.8;
-      }
-      100% {
-        transform: translateY(110vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
-
-    .subrecuerdo {
-      margin-top: 40px;
-      text-align: left;
-      background-color: #f3e8c0;
-      padding: 20px;
-      border-radius: 10px;
-      font-size: 4vw;
-    }
-
-    .subrecuerdo h3 {
-      color: #2f4f21;
-      font-size: 5vw;
-      margin-bottom: 10px;
-    }
-
-    .subrecuerdo p {
-      font-size: 4vw;
-      color: #333;
-    }
-
-    .imagen-recuerdo {
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-top: 10px;
-    }
-
-    .galeria-imagenes {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .galeria-imagenes img {
-      width: 100%;
-      max-width: 300px;
-      height: auto;
-      border-radius: 10px;
-      object-fit: cover;
-      transition: all 0.3s ease;
-    }
-
-    .galeria-imagenes:hover img {
-      filter: brightness(0.6);
-    }
-
-    .galeria-imagenes img:hover {
-      filter: brightness(1.1);
-      transform: scale(1.05);
-      z-index: 1;
-    }
-
-    /* Media Query para pantallas más grandes (opcional) */
+    /* RESPONSIVE */
     @media(min-width: 768px) {
       .hero h2 {
         font-size: 60px;
       }
 
-      .hero p,
       .subrecuerdo p {
         font-size: 18px;
       }
@@ -209,73 +242,79 @@
   </style>
 </head>
 <body>
-  <div id="hojas-container"></div>
 
-  <section class="hero">
-    <h2>Guía de dropshipping</h2>
-    <p class="frase">No rendirse es la clave del éxito</p>
+  <div id="paracaidas-container"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">Recio</div>
+    <nav class="nav-links">
+      <a href="#">Inicio</a>
+      <a href="#apartado1">Producto</a>
+      <a href="#apartado2">Tienda O.</a>
+      <a href="#apartado3">Marketing O.</a>
+    </nav>
+    <div class="nav-buttons">
+      <button class="btn-login">Log in</button>
+      <button class="btn-signin">Sign in</button>
+    </div>
+  </header>
+
+  <!-- HERO LANDING -->
+  <section class="landing-hero">
+    <h1>Dropshipping</h1>
+    <p>Una guía visual y práctica para transformar tu estilo, hábitos y éxito digital.</p>
+    <div class="hero-buttons">
+      <button class="btn-primary">Empezar ahora</button>
+      <button class="btn-secondary">Explorar</button>
+    </div>
   </section>
 
-  <div class="contenedor-casillas">
-    <a href="#apartado1" class="casilla" style="background-image: url('desarrollo.png');">
-      Glow now
-    </a>
-    <a href="#apartado2" class="casilla" style="background-image: url('salud.png');">
-      Gastronomía
-    </a>
-    <a href="#apartado3" class="casilla" style="background-image: url('montañita.jpg');">
-      Aventuras
-    </a>
-  </div>
-
-  <!-- Apartado 1: GlowUp -->
-  <div id="apartado1" class="seccion">
-    <h2>GlowUp</h2>
-
-    <div class="galeria-imagenes">
-      <img src="antes.jpg" alt="Antes">
-      <img src="now.jpg" alt="Ahora">
+    <div class="right">
+        <div class="image">
+            <img src="busqueda.png">
+        </div>
+        <div class="text">
+            <h2>Producto</h2>
+            <p>Infórmate sobre nuestra misión, nuestros métodos y los resultados de décadas de defensa de derechos.</p>
+            <button onclick="window.location.href='organizacion.html'">Ver más</button>
+        </div>
+    </div>
+    <div class="right">
+        <div class="image">
+            <img src="store.png">
+        </div>
+        <div class="text">
+            <h2>Tienda online</h2>
+            <p>¿Estás listo para dar el siguiente paso? Puedes convertirte en un colaborador de nuestra causa o participar personalmente.</p>
+            <button onclick="window.location.href='accion.html'">Ver más</button>
+        </div>
+    </div>
+    <div class="right">
+        <div class="image">
+            <img src="marketing.png">
+        </div>
+        <div class="text">
+            <h2>Marketing orgánico</h2>
+            <p>¿Estás listo para dar el siguiente paso? Puedes convertirte en un colaborador de nuestra causa o participar personalmente.</p>
+            <button onclick="window.location.href='accion.html'">Ver más</button>
+        </div>
     </div>
 
-    <div class="subrecuerdo">
-      <h3>Skin Care</h3>
-      <p>El cuidado de la cara es muy importante ya que es la primera perspectiva que van a tener los demás acerca de ti.</p>
-      <p><b>Cejas:</b> Tenerlas rectas y cuidadas favorece mucho el rostro.</p>
-      <p><b>Lavado:</b> Lava tu cara con agua fría y usa un jabón facial con cepillo, no con manos.</p>
-      <p><b>Masajea:</b> Masajear 3 minutos tonifica músculos y da vitalidad.</p>
-      <p><b>Afeitado:</b> Dependiendo del rostro, elige si afeitarte o dejarte barba limpia.</p>
-      <p><b>Pelo:</b> Encuentra un peinado que te favorezca según tu rostro.</p>
-    </div>
+  <footer>
+    © 2025 RecioInfo. Todos los derechos reservados.
+  </footer>
 
-    <div class="galeria-imagenes">
-      <img src="imagen1.jpg">
-      <img src="imagen2.jpg">
-      <img src="imagen3.jpg">
-    </div>
+<script>
+  const paracaidasContainer = document.getElementById('paracaidas-container');
 
-    <div class="subrecuerdo">
-      <h3>Vestimenta</h3>
-      <p>No es necesario gastar mucho, encuentra un estilo propio:</p>
-      <p><b>Parte arriba:</b> Ropa básica, con pocos logos.</p>
-      <p><b>Parte abajo:</b> Combina con arriba o con calzado, evita choques de tonos.</p>
-      <p><b>Calcetines:</b> Que combinen con el calzado, mejor bajos.</p>
-      <p><b>Detalles:</b> Agrega un accesorio pequeño (reloj, pulsera, cadena discreta).</p>
-    </div>
-
-    <div class="subrecuerdo">
-      <h3>Actividad física</h3>
-      <p>Mejora tu confianza, energía y mentalidad.</p>
-      <p><b>Deporte:</b> Socializas, te diviertes y te mantienes en forma.</p>
-      <p><b>Entreno:</b> Gimnasio o casa, requiere constancia y disciplina.</p>
-    </div>
-  </div>
-
-  <!-- Apartado 2: Gastronomía -->
-  <div id="apartado2" class="seccion">
-    <h2>Gastronomía</h2>
-    <p>Recomendaciones prácticas sobre viajes, escritura y más.</p>
-  </div>
-
-  <!-- Apartado 3: Aventuras -->
-  <div id="apartado3" class="seccion">
-    <h2>Avent
+  for (let i = 0; i < 20; i++) {
+    const p = document.createElement('div');
+    p.classList.add('paracaidas');
+    p.style.left = Math.random() * 100 + 'vw';
+    p.style.animationDuration = (10 + Math.random() * 10) + 's';
+    paracaidasContainer.appendChild(p);
+  }
+</script>
+</body>
+</html>
