@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dropshipping</title>
   <style>
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evita el desbordamiento lateral */
+}
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
@@ -13,17 +18,20 @@
     }
 
     /* NAVBAR */
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      background-color: rgba(255, 255, 255, 0.9);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    width: 100vw; /* Garantiza que ocupe todo el ancho */
+    max-width: 100%; /* Previene desbordamientos */
+}
+
 
     .nav-links {
       display: flex;
@@ -260,7 +268,7 @@
         width: 100%; /* Que los botones ocupen todo el ancho en móvil */
     }
 }
-    @media (max-width: 768px) {
+@media (max-width: 768px) {
 .landing-hero {
     width: 100vw; /* Asegura que la sección ocupe todo el ancho */
     overflow: hidden; /* Evita que elementos desborden */
@@ -299,7 +307,6 @@
       <a href="#apartado2">Tienda O.</a>
       <a href="#apartado3">Marketing O.</a>
     </nav>
-    
   </header>
 
   <!-- HERO LANDING -->
