@@ -8,11 +8,14 @@
 body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Evita desplazamiento lateral */
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #fff;
-    color: #111;
+    overflow-x: hidden; /* Evita el desbordamiento lateral */
 }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+      color: #111;
+    }
 
     /* NAVBAR */
 .navbar {
@@ -20,20 +23,21 @@ body {
     top: 0;
     z-index: 1000;
     display: flex;
+    overflow: hidden; /* Evita elementos que sobresalgan */
     justify-content: space-between;
     align-items: center;
-    padding: 15px 10px; /* Reduce padding para evitar desbordamientos */
+    padding: 15px 20px;
     background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    width: 100vw; /* Ocupa todo el ancho */
-    max-width: 100%;
+    width: 100vw; /* Garantiza que ocupe todo el ancho */
+    max-width: 100%; /* Previene desbordamientos */
 }
 
-.nav-links {
-    display: flex;
-    flex-wrap: wrap; /* Permite que los enlaces se ajusten en móvil */
-    gap: 10px;
-}
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
 
     .nav-links a {
       text-decoration: none;
@@ -60,7 +64,7 @@ body {
     }
 
     .landing-hero h1 {
-      font-size: 42px;
+      font-size: 52px;
       font-weight: bold;
       color: #fff;
       margin-bottom: 15px;
@@ -70,22 +74,6 @@ body {
       font-size: 18px;
       color: #fff;
       margin-bottom: 30px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .hero-buttons button {
-      padding: 12px 24px;
-      font-size: 16px;
-      border-radius: 6px;
-      border: none;
-      font-weight: 600;
-      cursor: pointer;
     }
 
     .btn-primary {
@@ -203,6 +191,18 @@ body {
             border-radius: 10px;
         }
 
+.expand {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0; /* Agrega una transición de opacidad para mejorar la fluidez */
+}
+
+.expand.expandido {
+    max-height: 500px; /* Ajusta según el contenido */
+    opacity: 1; /* Hace que la aparición sea progresiva */
+}
+
 footer {
     background-color: #222;
     color: #fff;
@@ -212,6 +212,7 @@ footer {
     width: 100vw; /* Asegura que ocupe todo el ancho */
     max-width: 100%; /* Evita desbordamientos */
 }
+
 
     /* RESPONSIVE */
     @media(min-width: 768px) {
@@ -233,8 +234,8 @@ footer {
       }
     }
         .expand {
-            width: 300px;
-            height: 100px;
+            width: 600px;
+            height: 10px;
             overflow: hidden;
             transition: height 0.5s ease;
             background-color: #f4f4f4;
@@ -242,7 +243,7 @@ footer {
         }
 
         .expand.expandido {
-            height: 300px;
+            height: 1000px;
         }
 
         button {
@@ -267,13 +268,10 @@ footer {
         width: 100%; /* Que los botones ocupen todo el ancho en móvil */
     }
 }
-
 @media (max-width: 768px) {
-    .landing-hero {
-        width: 100vw; /* Asegura que ocupe todo el ancho */
-        padding: 60px 10px; /* Reduce espacio para mejor ajuste */
-        background-size: cover; /* Ajusta la imagen */
-        background-position: center;
+.landing-hero {
+    width: 100vw; /* Asegura que la sección ocupe todo el ancho */
+    overflow: hidden; /* Evita que elementos desborden */
 }
 
     .landing-hero h1 {
@@ -284,16 +282,6 @@ footer {
         font-size: 16px; /* Reduce el tamaño del texto */
     }
 
-    .hero-buttons {
-        flex-direction: column; /* Botones en columna */
-        gap: 10px;
-    }
-
-    .hero-buttons button {
-        width: 100%; /* Que los botones ocupen todo el ancho */
-        font-size: 14px;
-        padding: 10px;
-    }
 }
   </style>
 </head>
@@ -304,61 +292,81 @@ footer {
   <!-- NAVBAR -->
   <header class="navbar">
     <nav class="nav-links">
-      <a href="#">Inicio</a>
-      <a href="#apartado1">Producto</a>
-      <a href="#apartado2">Tienda O.</a>
-      <a href="#apartado3">Marketing O.</a>
+      <a href="#">Inicio</a>      
+      <a href="#producto">Producto</a>
+      <a href="#tienda">Tienda O.</a>
+      <a href="#marketing">Marketing O.</a>
     </nav>
   </header>
 
   <!-- HERO LANDING -->
   <section class="landing-hero">
     <h1>Dropshipping</h1>
-    <p>Una guía visual y práctica para transformar tu estilo, hábitos y éxito digital.</p>
-    <div class="hero-buttons">
-      <button class="btn-primary">Empezar ahora</button>
-      <button class="btn-secondary">Explorar</button>
-    </div>
+    <p>Una guía sobre este modelo de negocio escrita por Recio.</p>
   </section>
 
-    <div class="right">
+    <div class="right" id="producto">
         <div class="image">
             <img src="busqueda.png">
         </div>
         <div class="text">
             <h2>Producto</h2>
-            <p>Infórmate sobre nuestra misión, nuestros métodos y los resultados de décadas de defensa de derechos.</p>
+<p>La elección del producto es fundamental para el éxito de cualquier negocio. Es importante identificar un nicho de mercado con demanda insatisfecha.</p>
 <div class="expand" id="expand1">
-    <p>Este es el contenido inicial de Producto.</p>
-    <p style="display: none;" id="extra1">Aquí está el contenido adicional de Producto.</p>
+      <p>Para ello, se pueden utilizar herramientas como Google Trends, análisis de palabras clave y estudios de mercado para detectar oportunidades.</p>
+
+      <p><b>Características clave:</b></p>
+
+      <p><b>Demanda comprobada:</b> El producto debe tener una audiencia interesada y dispuesta a comprar.</p>
+
+      <p><b>Diferenciación:</b> Ofrecer características únicas o mejoras respecto a la competencia.</p>
+
+      <p><b>Rentabilidad:</b> Asegurar márgenes de beneficio adecuados para sostener el negocio.</p>
+            </div>
+ <button onclick="expandir('expand1')">Ver más</button>   
 </div>
-   <button onclick="expandir('expand1', 'extra1')">Ver más</button>
-        </div>
-    </div>
-    <div class="right">
+</div>
+   
+    <div class="right" id="tienda">
         <div class="image">
             <img src="store.png">
         </div>
         <div class="text">
             <h2>Tienda online</h2>
+<p>La página web es la carta de presentación del negocio en línea. Debe ser atractiva, funcional y optimizada para convertir visitantes en clientes. Es esencial que la navegación sea intuitiva y que la información esté claramente estructurada.</p>
 <div class="expand" id="expand2">
-    <p>Este es el contenido inicial de Tienda online.</p>
-    <p style="display: none;" id="extra2">Aquí está el contenido adicional de Tienda online.</p>
+ <p><b>Características clave:</b></p>
+
+ <p><b>Diseño responsive:</b> Adaptado a dispositivos móviles y diferentes tamaños de pantalla.</p>
+
+ <p><b>Velocidad de carga:</b> Páginas que cargan rápidamente mejoran la experiencia del usuario y el SEO.</p>
+
+ <p><b>Optimización SEO:</b> Uso adecuado de palabras clave, metadatos y contenido relevante para mejorar el posicionamiento en buscadores.</p>
+
+ <p><b>Llamadas a la acción (CTA):</b> Botones y enlaces que guían al usuario hacia la conversión, como compras o suscripciones.</p>
 </div>
-   <button onclick="expandir('expand2', 'extra2')">Ver más</button>
+   <button onclick="expandir('expand2')">Ver más</button>
         </div>
     </div>
-    <div class="right">
+    <div class="right" id="marketing">
         <div class="image">
             <img src="marketing.png">
         </div>
         <div class="text">
             <h2>Marketing orgánico</h2>
+<p>El marketing orgánico se basa en atraer tráfico y generar ventas sin recurrir a publicidad pagada. Esto se logra mediante la creación de contenido de valor y la interacción genuina con la audiencia.</p>
 <div class="expand" id="expand3">
-    <p>Este es el contenido inicial de Marketing orgánico.</p>
-    <p style="display: none;" id="extra3">Aquí está el contenido adicional de Marketing orgánico.</p>
+<p><b>Características clave:</b></p>
+
+<p><b>Contenido relevante:</b> Publicaciones en blogs, videos y redes sociales que resuelvan problemas o respondan preguntas de la audiencia.</p>
+
+<p><b>SEO:</b> Optimización de contenido para aparecer en los primeros resultados de búsqueda.</p>
+
+<p><b>Redes sociales:</b> Construcción de una comunidad activa y comprometida que comparta y recomiende el contenido.</p>
+
+<p><b>Email marketing:</b> Envío de boletines informativos y promociones a una lista de suscriptores interesados.</p>
 </div>
-   <button onclick="expandir('expand3', 'extra3')">Ver más</button>
+   <button onclick="expandir('expand3')">Ver más</button>
         </div>
     </div>
 
@@ -377,16 +385,17 @@ footer {
     paracaidasContainer.appendChild(p);
   }
 
- function expandir(expandId, extraId) {
-    let expand = document.getElementById(expandId);
-    let extra = document.getElementById(extraId);
+function expandir(id) {
+    var elemento = document.getElementById(id);
 
-    if (expand.classList.contains("expandido")) {
-        expand.classList.remove("expandido");
-        extra.style.display = "none";
+    if (elemento.classList.contains("expandido")) {
+        elemento.style.maxHeight = elemento.scrollHeight + "px"; // Fija altura antes de ocultar
+        setTimeout(() => {
+            elemento.classList.remove("expandido");
+        }, 200); // Espera la duración de la animación antes de cerrar
     } else {
-        expand.classList.add("expandido");
-        extra.style.display = "block";
+        elemento.classList.add("expandido");
+        elemento.style.maxHeight = elemento.scrollHeight + "px"; // Expande suavemente
     }
 }
 </script>
